@@ -3,3 +3,6 @@ python app.py
 
 run web: 
 npm start
+
+run mobile:
+npm run android
