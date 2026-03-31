@@ -5,4 +5,57 @@ run web:
 npm start
 
 run mobile:
-npm run android
+npx expo start
+
+
+backend/
+│
+├── app.py                  # Main Flask app entry point
+├── .env                    # Secrets (Mongo, email, Cloudinary, AI key)
+├── venv/                   # Python virtual environment
+│
+├── config/
+│   └── config.py           # Configuration variables (load from .env)
+│
+├── models/                 # Database models
+│   ├── user.py             # User schema
+│   ├── note.py             # Note schema
+│   └── tag.py              # Tag schema
+│
+├── routes/                 # API endpoints
+│   ├── auth.py             # Register, login, email verification
+│   ├── notes.py            # Create, edit, delete notes
+│   ├── tags.py             # Add tags, filter by tags/date
+│   └── ai_summary.py       # AI summary endpoints
+│
+├── services/               # External services / business logic
+│   ├── email_service.py    # Send verification emails
+│   ├── cloudinary_service.py  # Upload files to Cloudinary
+│   └── ai_service.py       # Send note to AI and get summary
+│
+├── utils/                  # Utility functions
+│   ├── auth_utils.py       # JWT helpers, password hashing
+│   ├── validators.py       # Input validation
+│   └── search_utils.py     # MongoDB text search helpers
+│
+└── requirements.txt        # Python dependencies
+
+Keep routes thin:
+routes/ only handles HTTP requests & responses.
+Business logic (AI, email, search) goes in services/ or utils/.
+Models are just schemas:
+Define MongoDB collections and fields here.
+Config separation:
+config/config.py reads .env and stores MONGO_URI, JWT_SECRET, etc.
+JWT Auth:
+Put helper functions in utils/auth_utils.py.
+
+theme color:
+#001011
+#093A3E
+#3AAFB9
+#64E9EE
+#97C8EB
+#3E4E50     
+#5E747F
+#274C77
