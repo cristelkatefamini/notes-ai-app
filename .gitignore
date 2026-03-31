@@ -1,0 +1,16 @@
+# Backend
+backend/venv/
+backend/.env
+
+# Node (web & mobile)
+node_modules/
+web/node_modules/
+mobile/node_modules/
+
+# Env files
+web/.env
+mobile/.env
+
+# System files
+.DS_Store
+Thumbs.db

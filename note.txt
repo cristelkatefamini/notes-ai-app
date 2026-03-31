@@ -1,0 +1,5 @@
+run backend:
+python app.py
+
+run web: 
+npm start
